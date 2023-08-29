@@ -1,0 +1,33 @@
+# depslib dependency file v1.0
+1693298598 source:d:\my workspace\codeblocks projects\school_management_system\list.c
+	"List.h"
+
+1693298585 d:\my workspace\codeblocks projects\school_management_system\list.h
+	<stdio.h>
+	<stdlib.h>
+	<stdbool.h>
+
+1693305547 source:d:\my workspace\codeblocks projects\school_management_system\main.c
+	<stdio.h>
+	<stdlib.h>
+	"DataTypes.h"
+	"ADT.h"
+
+1693234589 d:\my workspace\codeblocks projects\school_management_system\queue.h
+	<stdio.h>
+	<stdlib.h>
+	<stdbool.h>
+
+1693234591 source:d:\my workspace\codeblocks projects\school_management_system\queue.c
+	"Queue.h"
+
+1693305477 source:d:\my workspace\codeblocks projects\school_management_system\adt.c
+	"ADT.h"
+
+1693306715 d:\my workspace\codeblocks projects\school_management_system\adt.h
+	"DataTypes.h"
+	"Queue.h"
+	"List.h"
+
+1693306872 d:\my workspace\codeblocks projects\school_management_system\datatypes.h
+
