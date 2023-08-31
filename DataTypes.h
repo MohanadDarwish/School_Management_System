@@ -1,6 +1,14 @@
 #ifndef DATATYPES_H_INCLUDED
 #define DATATYPES_H_INCLUDED
-
+/**
+* Layer 0 Module
+*
+* Desc: DataTypes is an Type Abstraction for The project
+*
+* Author: Mohanad Darwish
+* Date: 30/8/2023
+* version: 1.0
+*/
 typedef signed long long sint64_t;
 typedef unsigned long long uint64_t;
 
@@ -24,13 +32,9 @@ typedef enum boolean
 
 typedef enum error_message
 {
-    SUCCESS,
-    FAILURE
+    FAILURE = -1,
+    SUCCESS =  0
+
 }error_t;
-
-
-
-
-
 
 #endif // DATATYPES_H_INCLUDED

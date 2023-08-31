@@ -1,46 +1,47 @@
 #include "ADT.h"
 
-void createADT(ADT_Type_t type , ADT_Node_t* pa)
+void createADT(ADT_Type_t type , ADT_Structure_t* pa)
+{
+    printf("\n");
+    return;
+}
+
+void addADTNode(ADT_Structure_t* pa, ADT_Entry_t  e)
 {
     return;
 }
 
-void addADTNode(ADT_Node_t* pq, ADT_Entry_t  e)
+void removeADTNode(ADT_Structure_t* pa, ADT_Entry_t *pe)
 {
     return;
 }
 
-void removeADTNode(ADT_Node_t* pa, ADT_Entry_t *pe)
-{
-    return;
-}
-
-bool ADTEmpty(ADT_Node_t* pa)
+bool_t ADTEmpty(ADT_Structure_t* pa)
 {
     return FALSE;
 }
 
-bool ADTFull(ADT_Node_t*  pa)
+bool_t ADTFull(ADT_Structure_t*  pa)
 {
     return FALSE;
 }
 
-sint32_t ADTSize(ADT_Node_t*  pa)
+sint32_t ADTSize(ADT_Structure_t*  pa)
 {
     return 0;
 }
 
-void ADTClear(ADT_Node_t* pa)
+void ADTClear(ADT_Structure_t* pa)
 {
     return;
 }
 
-void ADTPrint(ADT_Node_t* pa)
+void ADTPrint(ADT_Structure_t* pa)
 {
     return;
 }
 
-sint32_t ADTFrontElement(ADT_Node_t* pa)
+sint32_t ADTFrontElement(ADT_Structure_t* pa)
 {
     return 0;
 }
