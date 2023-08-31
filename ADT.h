@@ -1,9 +1,17 @@
 #ifndef ADT_H_INCLUDED
 #define ADT_H_INCLUDED
-/**ADT stands for Abstract Data Type*/
+/**
+* Layer 1 Module
+*
+* Desc: ADT stands for Abstract Data Type
+*
+* Author: Mohanad Darwish
+* Date: 30/8/2023
+* version: 1.0
+*/
 
 #include "DataTypes.h"
-//#include " Stack.h"
+#include "Stack.h"
 #include "Queue.h"
 #include "List.h"
 typedef enum ADT_Type
@@ -13,6 +21,12 @@ typedef enum ADT_Type
     LIST,
     TREE
 }ADT_Type_t;
+
+typedef enum ADT_Sort
+{
+    ASCENDING,
+    DESCENDING
+}ADT_Sort_t;
 
 typedef struct ADT_Entry
 {
@@ -34,22 +48,25 @@ typedef struct ADT_structure
     int size;//queue size
 }ADT_Structure_t;
 
-void createADT(ADT_Type_t type , ADT_Node_t* pa);
+void createADT(ADT_Type_t type , ADT_Structure_t* pa);
 
-void addADTNode(ADT_Node_t* pq, ADT_Entry_t  e);
+void addADTNode(ADT_Structure_t* pq, ADT_Entry_t  e);
 
-void removeADTNode(ADT_Node_t* pa, ADT_Entry_t *pe);
+void removeADTNode(ADT_Structure_t* pa, ADT_Entry_t *pe);
 
-bool ADTEmpty(ADT_Node_t* pa);
+bool_t ADTEmpty(ADT_Structure_t* pa);
 
-bool ADTFull(ADT_Node_t*  pa);
+bool_t ADTFull(ADT_Structure_t*  pa);
 
-sint32_t ADTSize(ADT_Node_t*  pa);
+sint32_t ADTSize(ADT_Structure_t*  pa);
 
-void ADTClear(ADT_Node_t* pa);
+void ADTClear(ADT_Structure_t* pa);
 
-void ADTPrint(ADT_Node_t* pa);
+void ADTPrint(ADT_Structure_t* pa);
 
-sint32_t ADTFrontElement(ADT_Node_t* pa);
+sint32_t ADTFrontElement(ADT_Structure_t* pa);
 
+void ADTSort(ADT_Structure_t* pa, ADT_Sort_t s);
+
+ADT_Node_t* ADTSearch(ADT_Structure_t* pa, ADT_Entry_t  e );
 #endif // ADT_H_INCLUDED

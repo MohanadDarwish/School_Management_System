@@ -45,18 +45,18 @@ void dequeue(Queue * pq, QEntry *pe)
     pq->size--;
 }
 
-bool QEmpty(Queue * pq)
+bool_t QEmpty(Queue * pq)
 {
     return (!pq->front);// not equal null
 }
 
-bool QFull(Queue * pq)
+bool_t QFull(Queue * pq)
 {
     //return 0; //why??
     return( pq->rear == pq->front );
 }
 
-int QSize(Queue* pq)
+sint32_t QSize(Queue* pq)
 {
     return(pq->size);
 }
@@ -82,7 +82,7 @@ void printQueue(Queue * pq)
     }
 }
 
-int frontQueue(Queue* pq)
+sint32_t frontQueue(Queue* pq)
 {
     return(pq->front->entry.data);
 }
