@@ -29,7 +29,7 @@ typedef struct listnode
 typedef struct list
 {
     LNode *head;//head
-    uint32_t   size;//queue size
+    uint32_t   size;//list size
 }List;
 
 //Functions Prototype
@@ -48,6 +48,10 @@ void ListDeleteNode(uint32_t pos, List* pl, LEntry *pe);
 
 void ListReadNode(uint32_t pos, List * pl, LEntry *pe);
 void ListReplaceNode(uint32_t pos, List * pl, LEntry *pe);
+
+//void ListSwap(uint32_t pos0, uint32_t pos1, List * pl);
+void ListSwapNodes(LNode** head, int x, int y);
+LNode* ListSearch(LNode** head, LEntry *pe);
 
 void ListPrint(List* pl);
 

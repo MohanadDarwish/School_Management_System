@@ -1,13 +1,13 @@
 #include"Queue.h"
 
-void createQueue(Queue * pq)
+void QueueInit(Queue * pq)
 {
     pq->front = NULL;
     pq->rear  = NULL;
     pq->size  = 0;
 }
 
-void enqueue(Queue * pq, QEntry e)
+void enQueue(Queue * pq, QEntry e)
 {
     QNode* pn      = (QNode*)malloc(sizeof(QNode*));
     if(pn)
@@ -32,7 +32,7 @@ void enqueue(Queue * pq, QEntry e)
 
 }
 
-void dequeue(Queue * pq, QEntry *pe)
+void deQueue(Queue * pq, QEntry *pe)
 {
     QNode *pn = pq -> front;
     *pe       = pn->entry;
@@ -45,23 +45,23 @@ void dequeue(Queue * pq, QEntry *pe)
     pq->size--;
 }
 
-bool_t QEmpty(Queue * pq)
+bool_t QueueEmpty(Queue * pq)
 {
     return (!pq->front);// not equal null
 }
 
-bool_t QFull(Queue * pq)
+bool_t QueueFull(Queue * pq)
 {
     //return 0; //why??
     return( pq->rear == pq->front );
 }
 
-sint32_t QSize(Queue* pq)
+uint32_t QueueSize(Queue* pq)
 {
     return(pq->size);
 }
 
-void QClear(Queue* pq)
+void QueueDestroy(Queue* pq)
 {
     while(pq->front)
     {
@@ -73,7 +73,7 @@ void QClear(Queue* pq)
     return;
 }
 
-void printQueue(Queue * pq)
+void QueuePrint(Queue * pq)
 {
     QNode *pn=pq->front;
     for(; pn; pn=pn->next)

@@ -31,21 +31,23 @@ typedef struct queue
 {
     QNode *front;
     QNode *rear;
-    sint32_t size;//queue size
+    uint32_t size;//queue size
 }Queue;
 
 //Functions Prototype
 
-void createQueue(Queue * pq);
+void QueueInit(Queue * pq);
 
-void enqueue(Queue* pq, QEntry  e);
-void dequeue(Queue* pq, QEntry *pe);
-bool_t QEmpty(Queue* pq);
-bool_t QFull(Queue*  pq);
-sint32_t  QSize(Queue*  pq);
-void QClear(Queue* pq);
+void enQueue(Queue* pq, QEntry  e);
+void deQueue(Queue* pq, QEntry *pe);
 
-void printQueue(Queue* pq);
+bool_t QueueEmpty(Queue* pq);
+bool_t QueueFull(Queue*  pq);
+uint32_t  QueueSize(Queue*  pq);
+void QueueDestroy(Queue* pq);
+
+
+void QueuePrint(Queue* pq);
 sint32_t  frontQueue(Queue* pq);
 
 #endif // _QUEUE_H_
