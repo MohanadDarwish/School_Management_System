@@ -36,37 +36,35 @@ typedef struct ADT_Entry
 typedef struct ADT_Node
 {
     struct ADT_Node *next;
-    struct ADT_Node *prev;
     ADT_Entry_t data;
     sint32_t size;//ADT structure size
 }ADT_Node_t;
 
-typedef struct ADT_structure
+typedef struct ADT_module
 {
-    ADT_Node_t *front;
-    ADT_Node_t *rear;
-    int size;//queue size
-}ADT_Structure_t;
+    ADT_Type_t adtType;
+    void* pADT;
 
-void createADT(ADT_Type_t type , ADT_Structure_t* pa);
+}ADT_Module_t;
 
-void addADTNode(ADT_Structure_t* pq, ADT_Entry_t  e);
+void createADT(ADT_Type_t type , void* pa);
 
-void removeADTNode(ADT_Structure_t* pa, ADT_Entry_t *pe);
+void addADTNode(uint32_t pos, void* pa, void*  pe);
 
-bool_t ADTEmpty(ADT_Structure_t* pa);
+void deleteADTNode(uint32_t pos, void* pa, void* pe);
 
-bool_t ADTFull(ADT_Structure_t*  pa);
+bool_t ADTEmpty(void* pa);
 
-sint32_t ADTSize(ADT_Structure_t*  pa);
+bool_t ADTFull(void*  pa);
 
-void ADTClear(ADT_Structure_t* pa);
+uint32_t ADTSize(void*  pa);
 
-void ADTPrint(ADT_Structure_t* pa);
+void ADTDestroy(void* pa);
 
-sint32_t ADTFrontElement(ADT_Structure_t* pa);
+void ADTPrint(void* pa);
 
-void ADTSort(ADT_Structure_t* pa, ADT_Sort_t s);
+void ADTSort(void* pa, ADT_Sort_t sortOrder);
 
-ADT_Node_t* ADTSearch(ADT_Structure_t* pa, ADT_Entry_t  e );
+void* ADTSearch(void* pa, void*  pe);
+
 #endif // ADT_H_INCLUDED

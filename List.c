@@ -150,6 +150,74 @@ void ListReplaceNode(uint32_t pos, List * pl, LEntry *pe)
     return;
 }
 
+
+/*******************************************/
+// Function to swap two nodes in a linked list
+void ListSwapNodes(LNode** head, int x, int y)
+{
+    // If x and y are the same, no need to swap
+    if (x == y) {
+        return;
+    }
+
+    // Search for the first node (x) and keep track of its previous node
+    LNode* prevX = NULL;
+    LNode* currX = *head;
+    while (currX != NULL && currX->entry.data != x) {
+        prevX = currX;
+        currX = currX->next;
+    }
+
+    // Search for the second node (y) and keep track of its previous node
+    LNode* prevY = NULL;
+    LNode* currY = *head;
+    while (currY != NULL && currY->entry.data != y) {
+        prevY = currY;
+        currY = currY->next;
+    }
+
+    // If either x or y is not present in the linked list, return
+    if (currX == NULL || currY == NULL) {
+        return;
+    }
+
+    // If x is not the head of the linked list, update the previous node's next pointer
+    if (prevX != NULL) {
+        prevX->next = currY;
+    } else {
+        *head = currY;
+    }
+
+    // If y is not the head of the linked list, update the previous node's next pointer
+    if (prevY != NULL) {
+        prevY->next = currX;
+    } else {
+        *head = currX;
+    }
+
+    // Swap the next pointers of x and y
+    LNode* temp = currY->next;
+    currY->next = currX->next;
+    currX->next = temp;
+}
+
+
+
+
+LNode* ListSearch(LNode** head, LEntry *pe)
+{
+    LNode* current = *head;
+
+    // Traverse the linked list until the value is found or the end is reached
+    while (current != NULL) {
+        if (current->entry.data == pe->data) {
+            return current; // Return the node if the value is found
+        }
+        current = current->next;
+    }
+
+    return NULL; // Return NULL if the value is not found
+}
 /*******************************************/
 
 

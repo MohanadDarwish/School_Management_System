@@ -42,38 +42,59 @@ int main()
     //Queue myQ;
     List myL;
     //QEntry Qdata;
-    LEntry Ldata;
+    ADT_Entry_t Ldata;
     //createQueue(&myQ);
-    ListInit(&myL);
+    //ListInit(&myL);
+    createADT(LIST, &myL);
     while(1)
     {
         //Qdata.data=5;
         Ldata.data=22;
         //enqueue(&myQ, Qdata);
-        ListInsertNode(0,&myL,Ldata);
+        //ListInsertNode(0,&myL,Ldata);
+        addADTNode(0,&myL,&Ldata);
+
 
         //Qdata.data=7;
         Ldata.data=33;
         //enqueue(&myQ, Qdata);
-        ListInsertNode(0,&myL,Ldata);
+        //ListInsertNode(0,&myL,Ldata);
+        addADTNode(0,&myL,&Ldata);
 
         //Qdata.data=20;
         Ldata.data=44;
         //enqueue(&myQ, Qdata);
-        ListInsertNode(0,&myL,Ldata);
+        //ListInsertNode(0,&myL,Ldata);
+        addADTNode(0,&myL,&Ldata);
 
         //Qdata.data=44;
         Ldata.data=55;
         //enqueue(&myQ, Qdata);
-        ListInsertNode(0,&myL,Ldata);
+        //ListInsertNode(0,&myL,Ldata);
+        addADTNode(0,&myL,&Ldata);
 
         //Qdata.data=50;
         Ldata.data=66;
         //enqueue(&myQ, Qdata);
-        ListInsertNode(0,&myL,Ldata);
+        //ListInsertNode(0,&myL,Ldata);
+        addADTNode(0,&myL,&Ldata);
+
+        //deleteADTNode(4,&myL,&Ldata);
+
+        //ListSwapNodes(&myL.head, 22 , 44);
+
+        ADTSort(&myL,ASCENDING);
 
         //printQueue(&myQ);
-        ListPrint(&myL);
+        //ListPrint(&myL);
+        ADTPrint(&myL);
+
+        Ldata.data=66;
+        LNode* r = (LNode*)ADTSearch(&myL, &Ldata);
+        printf("r->entry.data found := %lu\n",r->entry.data);
+
+        ADTSort(&myL,DESCENDING);
+        ADTPrint(&myL);
 
         printf("List Size is = %lu\n", ListSize(&myL));
         //QClear(&myQ);
