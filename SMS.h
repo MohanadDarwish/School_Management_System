@@ -10,6 +10,7 @@
 * version: 1.0
 */
 #include "DataTypes.h"
+#include "Menu.h"
 
 void Main_Menu();
 void New_Student();

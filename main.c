@@ -11,6 +11,7 @@
 #include "DataTypes.h"
 #include "ADT.h"
 #include "Menu.h"
+#include "SMS.h"
 
 
 int main()
@@ -88,15 +89,17 @@ int main()
         printf("List Size is = %lu\n", ListSize(&myL));
         //QClear(&myQ);
         ListDestroy(&myL);
-        const sint8_t buff[50]="Menu Title";
-        error_t result = MenuInit(buff,CYAN);
-        printf("result is= %d\n",result);
-        MenuPrint();
-        sint8_t scanbuff[50]={0};
-        MenuScanLn(scanbuff,&Ldata);
-        MenuPrintScannedLn();
+        //const sint8_t buff[50]="Menu Title";
+        //error_t result = MenuInit(buff,CYAN);
+        //printf("result is= %d\n",result);
+        //MenuPrint();
+        Main_Menu();
+//        sint8_t scanbuff[50]={0};
+//        MenuScanLn(scanbuff,&Ldata);
+//        MenuPrintScannedLn();
 
-        getchar();
+
+        //getchar();
 
     }
 

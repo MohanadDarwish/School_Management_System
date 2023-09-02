@@ -22,7 +22,7 @@ error_t MenuInit(const sint8_t* mTitle, Menu_Color_t mColor)
     return status;
 }
 
-error_t MenuAddLn(uint8_t* inputStr)
+error_t MenuAddLn(sint8_t* inputStr)
 {
     error_t status = FAILURE;
     if(M.menuAddedLnCount < LINE_COUNT)

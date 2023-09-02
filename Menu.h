@@ -10,7 +10,7 @@
 * version: 1.0
 */
 #include "DataTypes.h"
-#define LINE_COUNT 7
+#define LINE_COUNT 20
 #define LINE_LENGTH 50
 
 typedef enum menu_color
@@ -37,7 +37,7 @@ typedef struct menu
 }Menu_t;
 
 error_t MenuInit(const sint8_t* mTitle, Menu_Color_t mColor);
-error_t MenuAddLn(uint8_t* outputStr);
+error_t MenuAddLn(sint8_t* outputStr);
 void MenuScanLn(sint8_t* inputStr, void* input);
 void MenuPrintScannedLn(void);
 void MenuPrint(void);
